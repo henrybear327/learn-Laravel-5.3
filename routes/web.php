@@ -25,6 +25,7 @@ Route::get('/pagesHi', function() {
     return view('pages/about');
 });
 
+// passing arguments
 Route::get('/passingData', function() {
     //return view('pages/about'); // dot, slash are both ok
     
@@ -39,6 +40,12 @@ Route::get('/passingData', function() {
     // return view('pages/about')->with('people', $people);
     // return view('pages/about')->withPeople($people);
 });
+
+
+// controller
+// php artisan help make:controller
+Route::get('/homeYeah', 'PagesController@homeYeah'); // second argument, controller name @ method name
+Route::get('/hihi', 'PagesController@hihi'); // second argument, controller name @ method name
 
 
 Auth::routes();
