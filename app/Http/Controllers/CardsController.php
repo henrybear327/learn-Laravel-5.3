@@ -45,7 +45,8 @@ class CardsController extends Controller
         return view('cards.index', compact('cards'));
     }
 
-
+    /*
+    // Route::get('cards/{cardID}', 'CardsController@show');
     public function show($id)
     {
         $card = Card::find($id);
@@ -53,13 +54,13 @@ class CardsController extends Controller
         // return $card; // return directly -> JSON!!!!!! WOW! API built! :)
         return view('cards.show', compact('card'));
     }
+    */
 
-    /*
     // type-hinted
     // Route::get('cards/{card}', 'CardsController@show'); // the {card} must match the model name
     public function show(Card $card)
     {
-        return $card;
+        // return $card; // return directly -> JSON!!!!!! WOW! API built! :)
+        return view('cards.show', compact('card'));
     }
-    */
 }

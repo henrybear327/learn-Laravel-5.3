@@ -50,7 +50,7 @@ Route::get('/hihi', 'PagesController@hihi'); // second argument, controller name
 
 // Fetching data
 Route::get('cards', 'CardsController@index');
-Route::get('cards/{cardID}', 'CardsController@show');
+Route::get('cards/{card}', 'CardsController@show');
 
 
 Auth::routes();
