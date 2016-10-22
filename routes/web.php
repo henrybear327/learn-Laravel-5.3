@@ -48,6 +48,11 @@ Route::get('/homeYeah', 'PagesController@homeYeah'); // second argument, control
 Route::get('/hihi', 'PagesController@hihi'); // second argument, controller name @ method name
 
 
+// Fetching data
+Route::get('cards', 'CardsController@index');
+Route::get('cards/{cardID}', 'CardsController@show');
+
+
 Auth::routes();
 
 // controller -> think of a collection of route closures :)
