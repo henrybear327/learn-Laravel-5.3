@@ -38,6 +38,11 @@
                     <a class="navbar-brand" href="{{ url('/') }}">
                         {{ config('app.name', 'Laravel') }}
                     </a>
+                    @if (Auth::check())
+                        <a class="navbar-brand" href="{{ url('/home') }}">
+                            控制台
+                        </a>
+                    @endif
                 </div>
 
                 <div class="collapse navbar-collapse" id="app-navbar-collapse">
