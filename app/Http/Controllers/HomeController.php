@@ -30,4 +30,25 @@ class HomeController extends Controller
     {
         return view('admin.application');
     }
+
+    public function capSetting()
+    {
+        return view('admin.capSetting');
+    }
+
+    public function accountManagement()
+    {
+        return view('admin.accountManagement');
+    }
+
+    public function applicationForm()
+    {
+        return view('admin.applicationForm');
+    }
+
+    public function statusSetting()
+    {
+        return view('admin.statusSetting');
+    }
+
 }

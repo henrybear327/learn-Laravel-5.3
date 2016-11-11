@@ -77,3 +77,7 @@ Route::post('password/reset', 'Auth\ResetPasswordController@reset');
 Route::get('/home', 'HomeController@index');
 
 Route::get('/admin/application', 'HomeController@application');
+Route::get('/admin/capSetting', 'HomeController@capSetting');
+Route::get('/admin/accountManagement', 'HomeController@accountManagement');
+Route::get('/admin/applicationForm', 'HomeController@applicationForm');
+Route::get('/admin/statusSetting', 'HomeController@statusSetting');
