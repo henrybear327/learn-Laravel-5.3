@@ -8,7 +8,9 @@
                 <div class="panel-heading">Dashboard</div>
 
                 <div class="panel-body">
-                    You are logged in!<br>
+                    You are logged in!<hr>
+
+                    大家所交上來的檔案！<br>
 
                     <a href="{{ url('/admin/application') }}">管理員審查介面</a>
                     <a href="{{ url('/admin/accountManagement') }}">管理員帳號管理</a>

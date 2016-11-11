@@ -82,13 +82,14 @@
                     Learning Laravel 5.3
                 </div>
 
-                A testing site for Laravel beginner<br>
+                中正獎學金系統<br>
+                我的小小測試天地<hr>
 
                 @if (Auth::check())
-                    <a href="{{ url('/home') }}">Home</a>
+                    <a href="{{ url('/home') }}">進入主畫面</a>
                 @else
-                    <a href="{{ url('/login') }}">Login</a>
-                    <a href="{{ url('/register') }}">Register</a>
+                    <a href="{{ url('/login') }}">登入</a>
+                    <a href="{{ url('/register') }}">註冊</a>
                 @endif
             </div>
         </div>
