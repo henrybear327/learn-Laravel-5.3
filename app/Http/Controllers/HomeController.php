@@ -83,10 +83,12 @@ class HomeController extends Controller
         //dd($request->all());
 
         // check applicant has applied or not
+        /*
         if(DB::table('applicant')->where('id', Auth::user()->id)->count() != 0) {
             Session::flash('applicationMsg', '這學號已經申請過囉！'); // for flash session
             return view('applicant.applicationForm');
         }
+        */
         // no-brainer check is completed
 
         // add to DB

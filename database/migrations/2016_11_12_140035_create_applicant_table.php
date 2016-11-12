@@ -14,19 +14,20 @@ class CreateApplicantTable extends Migration
     public function up()
     {
         Schema::create('applicant', function (Blueprint $table) {
-
+            /*
             $table->integer('id')->unique();
             $table->foreign('id')
                 ->references('id')->on('users')
                 ->onDelete('cascade');
-
+            */
+            $table->integer('id');
             $table->string('ChineseName', 100);
             $table->string('EnglishName', 100);
             $table->integer('studentID')->unique();
 
             $table->timestamps();
 
-            $table->primary('id');
+            $table->increments('index');
         });
     }
 
