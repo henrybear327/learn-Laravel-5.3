@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
+use DB;
 
 class HomeController extends Controller
 {
@@ -38,7 +39,12 @@ class HomeController extends Controller
 
     public function accountManagement()
     {
-        return view('admin.accountManagement');
+        // get all users
+        $users = DB::table('users')->get();
+
+        return view('admin.accountManagement', [
+            "users" => $users,
+        ]);
     }
 
     public function applicationForm()
