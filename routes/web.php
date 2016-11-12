@@ -85,10 +85,10 @@ Route::group(['prefix' => 'administrator', 'middleware' => 'CheckAdmin'], functi
     Route::get('/statusSetting', 'HomeController@statusSetting');
 });
 
-Route::group(['prefix' => 'applicationReviewer'], function () {
-    Route::get('/application', 'HomeController@application');
+Route::group(['prefix' => 'applicationReviewer', 'middleware' => 'CheckReviewer'], function () {
+    
 });
 
-Route::group(['prefix' => 'studentApplicant'], function () {
+Route::group(['prefix' => 'studentApplicant', 'middleware' => 'CheckStudent'], function () {
     Route::get('/applicationForm', 'HomeController@applicationForm');
 });
