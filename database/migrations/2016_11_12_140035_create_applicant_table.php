@@ -23,7 +23,7 @@ class CreateApplicantTable extends Migration
             $table->integer('id');
             $table->string('ChineseName', 100);
             $table->string('EnglishName', 100);
-            $table->integer('studentID')->unique();
+            $table->integer('studentID');
 
             $table->timestamps();
 

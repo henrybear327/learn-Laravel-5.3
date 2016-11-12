@@ -103,6 +103,6 @@ class HomeController extends Controller
         );
 
         Session::flash('applicationMsg', '申請已經遞出！'); // for flash session
-        return redirect()->route('/applicationForm');
+        return view('applicant.applicationForm');
     }
 }

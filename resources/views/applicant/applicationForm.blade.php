@@ -12,7 +12,6 @@
             <div class="col-md-4">
                 <form method="POST" action=" {{url('studentApplicant/applicationForm')}} ">
                     <input type="hidden" name="_token" value="{{ csrf_token() }}">
-                    <input type="hidden" name="_method" value="POST"/>
 
                     <div class="form-group">
                         <label for="Input Chinese Name">中文名字</label>
