@@ -33,7 +33,13 @@
                     <td>{{$user->email}}</td>
                     <td>
                         <button type="button" class="btn btn-primary btn-sm">edit</button>
-                        <button type="button" class="btn btn-danger btn-sm">delete</button>
+                        <form method="POST" action="{{ url('/administrator/accountManagement/delete', $user->id) }}">
+                            <input type="hidden" name="_token" value="{{ csrf_token() }}">
+                            <input type="hidden" name="_method" value="DELETE"/>
+                            <button type="submit" class="btn btn-danger">
+                                Delete
+                            </button>
+                        </form>
                     </td>
                 </tr>
             @endforeach

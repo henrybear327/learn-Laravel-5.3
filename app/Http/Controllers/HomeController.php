@@ -57,4 +57,16 @@ class HomeController extends Controller
         return view('admin.statusSetting');
     }
 
+    public function deleteAccount($id)
+    {
+        // delete user with $id if exists
+        DB::table('users')->where('id', $id)->delete();
+
+        // get all users
+        $users = DB::table('users')->get();
+
+        return view('admin.accountManagement', [
+            "users" => $users,
+        ]);
+    }
 }

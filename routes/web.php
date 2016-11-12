@@ -82,6 +82,8 @@ Route::group(['prefix' => 'administrator', 'middleware' => 'CheckAdmin'], functi
     Route::get('/capSetting', 'HomeController@capSetting');
     Route::get('/accountManagement', 'HomeController@accountManagement');
     Route::get('/statusSetting', 'HomeController@statusSetting');
+
+    Route::delete('/accountManagement/delete/{id}', 'HomeController@deleteAccount'); // http://stackoverflow.com/questions/33818730/laravel-5-delete-user-record-using-routedelete-getting-methodnotallowedhttpex
 });
 
 Route::group(['prefix' => 'applicationReviewer', 'middleware' => 'CheckReviewer'], function () {
