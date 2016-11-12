@@ -8,7 +8,11 @@
                 <div class="panel-heading">Dashboard</div>
 
                 <div class="panel-body">
-                    You are logged in!<hr>
+                    You are logged in as
+                    @if(Auth::user()->userType == 3) admin
+                    @elseif(Auth::user()->userType == 2) reviewer
+                    @else student
+                    @endif!<hr>
 
                     大家所交上來的檔案！<br>
 
