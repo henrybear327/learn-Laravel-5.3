@@ -17,8 +17,16 @@
                     以下是大家交上來的檔案，我稍微更改了一些HTML code以符合template engine的需求，並做了一些routing和database結合的測試。有功能的網頁，會有說明。要不然基本上網頁都是靜態的（按鈕都沒反應就是啦！)
                     <br><br>
 
+                    大家可以用學生帳號亂申請個XD<br>
+                    然後可以到審查介面看簡單版的申請資料<br>
+
+                    <p>測試用學生帳號: student<br>
+                    測試用學生密碼: student</p>
+
+                    <hr>
+
                     @if(Auth::user()->userType == 3)
-                        <a href="{{ url('/administrator/application') }}">審查介面</a><br>
+                        <a href="{{ url('/administrator/application') }}">審查介面</a>:可以看到簡單版的申請資料<br>
                         <a href="{{ url('/administrator/accountManagement') }}">帳號管理</a>：可以觀看所有帳號和任意刪除帳號(對，刪除任意帳號）<br>
                         <a href="{{ url('/administrator/capSetting') }}">金額上限設定</a><br>
                         <a href="{{ url('/administrator/statusSetting') }}">系統狀態設定</a><br>

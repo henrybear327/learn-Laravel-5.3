@@ -32,7 +32,12 @@ class HomeController extends Controller
 
     public function application()
     {
-        return view('admin.application');
+        // get all users
+        $applications = DB::table('applicant')->get();
+
+        return view('admin.application', [
+            "applications" => $applications,
+        ]);
     }
 
     public function capSetting()
@@ -96,6 +101,6 @@ class HomeController extends Controller
         );
 
         Session::flash('applicationMsg', '申請已經遞出！'); // for flash session
-        return view('applicant.applicationForm');
+        return redirect()->route('/applicationForm');
     }
 }
