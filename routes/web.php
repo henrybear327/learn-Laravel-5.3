@@ -92,4 +92,6 @@ Route::group(['prefix' => 'applicationReviewer', 'middleware' => 'CheckReviewer'
 
 Route::group(['prefix' => 'studentApplicant', 'middleware' => 'CheckStudent'], function () {
     Route::get('/applicationForm', 'HomeController@applicationForm');
+
+    Route::post('/applicationForm', 'HomeController@applicationSubmission');
 });

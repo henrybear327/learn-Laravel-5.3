@@ -2,8 +2,11 @@
 
 namespace App\Http\Controllers;
 
+use Carbon\Carbon;
 use Illuminate\Http\Request;
 use DB;
+use Auth;
+use Session;
 
 class HomeController extends Controller
 {
@@ -49,7 +52,7 @@ class HomeController extends Controller
 
     public function applicationForm()
     {
-        return view('admin.applicationForm');
+        return view('applicant.applicationForm');
     }
 
     public function statusSetting()
@@ -68,5 +71,31 @@ class HomeController extends Controller
         return view('admin.accountManagement', [
             "users" => $users,
         ]);
+    }
+
+    public function applicationSubmission(Request $request)
+    {
+        //dd($request->all());
+
+        // check applicant has applied or not
+        if(DB::table('applicant')->where('id', Auth::user()->id)->count() != 0) {
+            Session::flash('applicationMsg', '這學號已經申請過囉！'); // for flash session
+            return view('applicant.applicationForm');
+        }
+        // no-brainer check is completed
+
+        // add to DB
+        DB::table('applicant')->insert(
+            [
+                'id'            => Auth::user()->id,
+                'ChineseName'   => $request->input('chineseName'),
+                'EnglishName'   => $request->input('englishName'),
+                'studentID'     => $request->input('studentID'),
+                'created_At'    => Carbon::now(),
+            ]
+        );
+
+        Session::flash('applicationMsg', '申請已經遞出！'); // for flash session
+        return view('applicant.applicationForm');
     }
 }

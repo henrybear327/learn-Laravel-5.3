@@ -1,7 +1,48 @@
 @extends('layouts.app')
 
 @section('content')
+
     <div class="container">
+        <p class="text-center">Form for testing</p>
+
+        <p class="text-center text-info">@if(Session::has('applicationMsg')) {{Session::get('applicationMsg')}} @endif</p>
+
+        <div class="row">
+            <div class="col-md-4"></div>
+            <div class="col-md-4">
+                <form method="POST" action="">
+                    <input type="hidden" name="_token" value="{{ csrf_token() }}">
+                    <input type="hidden" name="_method" value="POST"/>
+
+                    <div class="form-group">
+                        <label for="Input Chinese Name">中文名字</label>
+                        <input type="text" class="form-control" id="Input Chinese Name" placeholder="Chinese Name" name="chineseName">
+                    </div>
+
+                    <div class="form-group">
+                        <label for="Input English Name">英文名字</label>
+                        <input type="text" class="form-control" id="Input English Name " placeholder="English Name" name="englishName">
+                    </div>
+
+                    <div class="form-group">
+                        <label for="Input Student ID No">學號</label>
+                        <input type="number" class="form-control" id="Input Student ID No" placeholder="Student ID No" name="studentID">
+                    </div>
+
+                    <button type="submit" class="btn btn-success">
+                        Submit
+                    </button>
+                </form>
+            </div>
+            <div class="col-md-4"></div>
+        </div>
+    </div>
+
+    <hr>
+
+    <div class="container">
+        Original form
+
         <div class="row">
             <form class="col-xs-3" role="form">
                 <div class="form-group">
