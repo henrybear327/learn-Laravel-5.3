@@ -10,7 +10,7 @@
         <div class="row">
             <div class="col-md-4"></div>
             <div class="col-md-4">
-                <form method="POST" action="">
+                <form method="POST" action=" {{url('studentApplicant/applicationForm')}} ">
                     <input type="hidden" name="_token" value="{{ csrf_token() }}">
                     <input type="hidden" name="_method" value="POST"/>
 
