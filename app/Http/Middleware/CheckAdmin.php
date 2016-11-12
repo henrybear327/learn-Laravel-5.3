@@ -20,10 +20,10 @@ class CheckAdmin
             if ($request->ajax()) {
                 return response('Unauthorized.', 401);
             } else {
-                return redirect()->guest('auth.login');
+                return redirect()->guest('login');
             }
-        } elseif (Auth::user()->auth != 0) {
-            return redirect()->guest('auth.login');
+        } elseif (Auth::user()->userType != 1) {
+            return redirect()->guest('login');
         }
 
         return $next($request);
