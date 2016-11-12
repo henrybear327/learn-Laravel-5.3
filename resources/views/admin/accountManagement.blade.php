@@ -32,7 +32,7 @@
                     <td>It's hashed! Hehe!</td>
                     <td>{{$user->email}}</td>
                     <td>
-                        <button type="button" class="btn btn-primary btn-sm">edit</button>
+                        <!--<button type="button" class="btn btn-primary btn-sm">edit</button>-->
                         <form method="POST" action="{{ url('/administrator/accountManagement/delete', $user->id) }}">
                             <input type="hidden" name="_token" value="{{ csrf_token() }}">
                             <input type="hidden" name="_method" value="DELETE"/>

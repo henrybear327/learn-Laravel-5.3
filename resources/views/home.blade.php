@@ -28,8 +28,8 @@
                     @if(Auth::user()->userType == 3)
                         <a href="{{ url('/administrator/application') }}">審查介面</a>:可以看到簡單版的申請資料<br>
                         <a href="{{ url('/administrator/accountManagement') }}">帳號管理</a>：可以觀看所有帳號和任意刪除帳號(對，刪除任意帳號）<br>
-                        <a href="{{ url('/administrator/capSetting') }}">金額上限設定</a><br>
-                        <a href="{{ url('/administrator/statusSetting') }}">系統狀態設定</a><br>
+                        <a href="{{ url('/administrator/capSetting') }}">金額上限設定</a>:沒功能，只有靜態畫面<br>
+                        <a href="{{ url('/administrator/statusSetting') }}">系統狀態設定</a>:沒功能，只有靜態畫面<br>
                     @elseif(Auth::user()->userType == 2) reviewer
                     @else
                         <a href="{{ url('/studentApplicant/applicationForm') }}">學生申請表</a><br>
