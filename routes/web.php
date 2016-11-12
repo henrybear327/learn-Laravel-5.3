@@ -77,11 +77,18 @@ Route::post('password/reset', 'Auth\ResetPasswordController@reset');
 Route::get('/home', 'HomeController@index');
 
 
-//Route::group(['prefix' => 'admin', 'middleware' => 'auth'], function () {
-Route::group(['prefix' => 'admin'], function () {
+Route::group(['prefix' => 'admin', 'middleware' => 'CheckAdmin'], function () {
+//Route::group(['prefix' => 'administrator'], function () {
     Route::get('/application', 'HomeController@application');
     Route::get('/capSetting', 'HomeController@capSetting');
     Route::get('/accountManagement', 'HomeController@accountManagement');
-    Route::get('/applicationForm', 'HomeController@applicationForm');
     Route::get('/statusSetting', 'HomeController@statusSetting');
+});
+
+Route::group(['prefix' => 'applicationReviewer'], function () {
+    Route::get('/application', 'HomeController@application');
+});
+
+Route::group(['prefix' => 'studentApplicant'], function () {
+    Route::get('/applicationForm', 'HomeController@applicationForm');
 });
