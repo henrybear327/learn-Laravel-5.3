@@ -76,8 +76,12 @@ Route::post('password/reset', 'Auth\ResetPasswordController@reset');
 // controller -> think of a collection of route closures :)
 Route::get('/home', 'HomeController@index');
 
-Route::get('/admin/application', 'HomeController@application');
-Route::get('/admin/capSetting', 'HomeController@capSetting');
-Route::get('/admin/accountManagement', 'HomeController@accountManagement');
-Route::get('/admin/applicationForm', 'HomeController@applicationForm');
-Route::get('/admin/statusSetting', 'HomeController@statusSetting');
+
+//Route::group(['prefix' => 'admin', 'middleware' => 'auth'], function () {
+Route::group(['prefix' => 'admin'], function () {
+    Route::get('/application', 'HomeController@application');
+    Route::get('/capSetting', 'HomeController@capSetting');
+    Route::get('/accountManagement', 'HomeController@accountManagement');
+    Route::get('/applicationForm', 'HomeController@applicationForm');
+    Route::get('/statusSetting', 'HomeController@statusSetting');
+});
