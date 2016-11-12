@@ -3,7 +3,7 @@
 @section('content')
 
     <div class="container">
-        <p class="text-center">Form for testing</p>
+        <p class="text-center">測試用表單，簡單到炸開，沒有checking的表單啊！XD 危險行為</p>
 
         <p class="text-center text-info">@if(Session::has('applicationMsg')) {{Session::get('applicationMsg')}} @endif</p>
 
