@@ -78,7 +78,6 @@ Route::get('/home', 'HomeController@index');
 
 
 Route::group(['prefix' => 'administrator', 'middleware' => 'CheckAdmin'], function () {
-//Route::group(['prefix' => 'administrator'], function () {
     Route::get('/application', 'HomeController@application');
     Route::get('/capSetting', 'HomeController@capSetting');
     Route::get('/accountManagement', 'HomeController@accountManagement');
@@ -86,7 +85,7 @@ Route::group(['prefix' => 'administrator', 'middleware' => 'CheckAdmin'], functi
 });
 
 Route::group(['prefix' => 'applicationReviewer', 'middleware' => 'CheckReviewer'], function () {
-    
+
 });
 
 Route::group(['prefix' => 'studentApplicant', 'middleware' => 'CheckStudent'], function () {

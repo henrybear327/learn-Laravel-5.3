@@ -67,6 +67,7 @@ namespace App{
  * @method static \Illuminate\Database\Query\Builder|\App\User whereUpdatedAt($value)
  * @mixin \Eloquent
  * @property integer $userType
+ * @property-read \Illuminate\Notifications\DatabaseNotificationCollection|\Illuminate\Notifications\DatabaseNotification[] $readNotifications
  * @method static \Illuminate\Database\Query\Builder|\App\User whereUserType($value)
  */
 	class User extends \Eloquent {}
