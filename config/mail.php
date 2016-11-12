@@ -56,8 +56,8 @@ return [
     */
 
     'from' => [
-        'address' => 'forget@snoopy.csie.io',
-        'name' => 'Customer Service',
+        'address' => 'studentService@snoopy.csie.io',
+        'name' => '中正大學獎學金系統',
     ],
 
     /*
